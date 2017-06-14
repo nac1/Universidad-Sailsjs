@@ -6,8 +6,39 @@
  */
 
 module.exports = {
-
+autoCreatedAt: false,
+autoUpdatedAt: false,
   attributes: {
+  	id_profesor: {
+   		    type: 'integer',
+            unique: true,
+            primaryKey: true
+    //        autoIncrement: true
+    },
+    nombre:{
+    	type: 'string',
+    	size: 25,
+    	required:true
+    },
+    apellido_paterno:{
+    	type: 'string',
+    	size: 25,
+    	required:true
+    },
+    apellido_materno:{
+    	type: 'string',
+    	size: 25,
+    	required:true
+    },
+    edad:{
+    	type: 'integer',
+    	required:true
+    },
+    materias:{
+collection: 'materia', 
+via: 'id_profesor',
+through:'imparte_materia' 
+}
 
   }
 };

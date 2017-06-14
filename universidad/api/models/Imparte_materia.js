@@ -8,7 +8,11 @@
 module.exports = {
 
   attributes: {
-
+id_profesor:{ 
+	model:'profesor'
+}, 
+id_materia: {
+	model: 'materia' }
   }
 };
 

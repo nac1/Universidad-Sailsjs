@@ -21,7 +21,12 @@ module.exports = {
     },
     matricula:{
     	model:'alumno'
-    }
+    },
+    profesores: {
+collection: 'profesor',
+ via: 'id_materia', 
+through:'imparte_materia'
+}
 
   }
 };
