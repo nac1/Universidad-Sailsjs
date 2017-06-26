@@ -11,9 +11,9 @@ autoUpdatedAt: false,
   attributes: {
   	id_profesor: {
    		    type: 'integer',
-            unique: true,
+           unique: true,
             primaryKey: true
-    //        autoIncrement: true
+         //autoIncrement: true
     },
     nombre:{
     	type: 'string',

@@ -1,0 +1,27 @@
+<table  class="striped bordered highlight responsive-table">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Last name</th>
+              <th>Age</th>
+              <th>Career</th>
+              <th colspan="2" class="center">Options</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+        <% _.each(alumnos,function(alumno){%>
+          <tr>
+            <td><%= alumno.matricula%></td>
+            <td><%= alumno.nombre%></td>
+            <td><%= alumno.apellido_paterno%> <%= alumno.apellido_materno%></td>
+            <td><%= alumno.edad%></td>
+            <td><%= alumno.cursa%></td>
+            <td>update</td>
+            <td>Delete</td>
+          </tr>
+        <%  }) %>
+        </tbody>
+      </table>

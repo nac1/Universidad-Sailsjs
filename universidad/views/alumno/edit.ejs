@@ -1,0 +1,44 @@
+
+<h1> Update Student</h1>
+<form class="col s12" method="POST" action="/alumno/update/?matricula=<%= alumno.matricula%>">
+<div class="row">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" name="nombre" value="<%= alumno.nombre%>">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_telephone" type="text" class="validate" name="ap" value="<%= alumno.apellido_paterno%>">
+          <label for="icon_telephone">last name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" name="am" value="<%= alumno.apellido_materno%>">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <p>Edad</p>
+           <input type="range" id="test5" min="16" max="100" name="edad" value="<%= alumno.edad%>">
+        </div>
+      </div>
+
+       <div class="row">
+      <div class="input-field col s12">
+	    <select name="carrera">
+	      <option value="" disabled selected>Choose your career</option>
+        <option value="<%= alumno.cursa%>" selected><%= alumno.cursa%></option>
+	      <option value="1">SW</option>
+	      <option value="2">TF</option>
+	      <option value="3">IA</option>
+	    </select>
+	  </div>
+ 	</div>
+ 	  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
