@@ -1,4 +1,4 @@
-/**
+ /**
  * AlumnoController
  *
  * @description :: Server-side logic for managing alumnoes
@@ -19,12 +19,14 @@ module.exports = {
  		apellido_paterno:req.param('ap'),
  		apellido_materno:req.param('am'),
  		edad:req.param('edad'),
- 		cursa:req.param('carrera')
+ 		cursa:req.param('carrera'),
+ 		password:req.param('pas'),
+ 		passwordConfirmation:req.param('cpas')
  				}
     //Alumno es modelo             //alumno registro
  	Alumno.create(alumnObj,function(err,alumno){
  		if(err){
- 			console.log(JSON.stringify(flash.err[err]));
+ 			//console.log(JSON.stringify(err));
  			req.session.flash={err:err};
  			return res.redirect('alumno/new');
  			   }
