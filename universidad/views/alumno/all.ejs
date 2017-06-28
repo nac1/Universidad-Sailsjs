@@ -19,8 +19,21 @@
             <td><%= alumno.apellido_paterno%> <%= alumno.apellido_materno%></td>
             <td><%= alumno.edad%></td>
             <td><%= alumno.cursa%></td>
-            <td>update</td>
-            <td>Delete</td>
+            <td>
+              <form class="col s12" method="POST" action="/alumno/show/?matricula=<%=alumno.matricula%>">
+              <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Show
+              <i class="material-icons right">mode_edit</i>
+              </button>
+              </form>
+            </td>
+
+            <td>
+              <form class="col s12" method="POST" action="/alumno/delete/?matricula=<%=alumno.matricula%>">
+              <button class="btn waves-effect waves-light #c62828 red darken-3" type="submit" name="action">Delete
+              <i class="material-icons right">delete</i>
+              </button>
+              </form>
+            </td>
           </tr>
         <%  }) %>
         </tbody>

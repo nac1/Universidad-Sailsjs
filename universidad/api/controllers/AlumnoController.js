@@ -24,6 +24,8 @@ module.exports = {
     //Alumno es modelo             //alumno registro
  	Alumno.create(alumnObj,function(err,alumno){
  		if(err){
+ 			console.log(JSON.stringify(flash.err[err]));
+ 			req.session.flash={err:err};
  			return res.redirect('alumno/new');
  			   }
  		sails.log('alumno %s%',alumno);
@@ -96,6 +98,18 @@ module.exports = {
 		}
 		res.view({alumnos:alumnos});
  									});
+ },
+ delete:function(req,res,next)
+ {
+ 	Alumno.destroy({matricula:req.param('matricula')},
+ 		function(err){
+ 				if(err){
+ 					console.log(err);
+ 					return next(err);
+ 				}
+ 				res.redirect('/alumno/all');
+
+ 					});
  }
 
 

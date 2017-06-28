@@ -1,5 +1,15 @@
 
 <h1> Dar de alta un alumno</h1>
+<% if(flash && flash.err) {%>
+<ul class="collection">
+   <% Object.keys(flash.err).forEach(function(error){ %>
+      <li class="collection-item"> <%- JSON.stringify(flash.err[error]) %> </li>
+                                                  <% }) %>
+</ul>
+                        <% } %>
+
+
+
 <form class="col s12" method="POST" action="/alumno/create">
 <div class="row">
         <div class="input-field col s6">
